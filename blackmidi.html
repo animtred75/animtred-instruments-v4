@@ -216,7 +216,7 @@
 				for (var trackID = 0; trackID < this.trackRender.length; trackID++) {
 					var tracksRender = this.trackRender[trackID];
 					var track = this.mse.trackQueue[trackID];
-					var tracksQueue = track.decodeNoteQueue;
+					var tracksQueue = track.noteQueue;
 					var time = track.currentPulse;
 					var _tempo = track.tempo;
 					var _tempoTick = track.tempoTick;
