@@ -1,9 +1,9 @@
 /*
-Anim Tred Instruments 5 Enterprise v5.1.10
+Anim Tred Instruments v5.1.20
 
 a Cartoon the Sounds, record OBS Studio a Edit program: Adobe Premiere
 
-My Soundbanks 14,844,448 byte
+My Soundbanks 16,640,812 byte
 
 2023/4/28 Anim Tred Studio, LLC
 */
@@ -47,19 +47,20 @@ var AnimTredInstruments = (function() {
 		"acoustic bass drum": ["pinkie-pie-83", 0.4]
 	}
 	var INSTRUMENT_INFO = {
-		"piano": ["mlp-applebloom-89", [[60, 0.4], [82, 0.3]], false, 0.1, null],
-		"electric piano": ["mlp-s4e3-820-1", 0.5, false, 0.1, null],
-		"organ": ["mlp-s1e22-176", [[48, 0.72], [60, 0.68], [72, 0.6]], true, 0.1, 52],
-		"guitar": ["mlp-pearbutter-193", 0.5, false, 0.1, null],
-		"electric guitar": ["mlp-12", 0.4, false, 0.1, 60],
-		"bass": ["daisy-143", [[36, 0.5], [48, 0.4]], false, 0.1, 57],
+		"piano": ["mlp-applebloom-89", [[60, 1], [82, 0.8]], false, 0.1, null],
+		"electric piano": ["mlp-s4e3-820-1", 1, false, 0.1, null],
+		"organ": ["mlp-s1e22-176", 1, true, 0.1, 60],
+		"guitar": ["mlp-pearbutter-193", 1, false, 0.1, null],
+		"electric guitar": ["mlp-12", 1, false, 0.1, 60],
+		"bass": ["daisy-143", [[36, 0.4], [48, 0.3]], false, 0.1, 57],
 		"pizzicato": ["mlp-s3-applebloom-168", [[48, 0.5], [60, 0.42]], false, 0.25, 46.85],
 		"harmonica": ["viaconcbs-0", 0.5, true, null, null],
-		"clarinet": ["mlp-fim-s4e21-282", 0.5, true, null, null],
+		"clarinet": ["mlp-fim-s4e21-282", 0.4, true, null, null],
 		"saxophone": ["mlp-fim-s2e22-953", 0.6, true, null, 59.75],
-		"violin": ["peppa-pig-mi-69-1", [[60, 0.7], [72, 0.6]], true, 0.1, null],
-		"tremolo-string-1": ["peppa-pig-mi-69-1", 0.5, true, 0.1, null],
-		"tremolo-string-2": ["peppa-pig-mi-69-2", 0.5, true, 0.25, null],
+		"violin": ["peppa-pig-mi-69-1", 1, true, 0.1, null],
+		"cello": ["peppa-pig-mi-69-cello", 1, true, 0.1, null],
+		"tremolo-string-1": ["peppa-pig-mi-69-1", 0.6, true, 0.1, null],
+		"tremolo-string-2": ["peppa-pig-mi-69-2", 0.6, true, 0.25, null],
 		"violin_3": ["peppa-pig-mi-69-3", 0.5, true, 0.25, null],
 		"overdriven guitar": ["mlp-24-1", 0.6, true, null, 61],
 		"sitar": ["mlp-24-2", 0.6, false, 0.8, 61],
@@ -67,27 +68,27 @@ var AnimTredInstruments = (function() {
 		"wooden flute": ["peppa-pig-mmiwm-144", [[60, 0.8], [72, 0.7]], true, null, 58],
 		"bassoon": ["pinkie-pie-77", [[36, 0.6], [48, 0.5], [60, 0.4], [72, 0.3]], true, null, null],
 		"choir": ["mlp-fim-s1-fluttershy-1", [[60, 0.4], [72, 0.3]], true, 0.1, 55],
-		"vibraphone": ["mlp-fim-s2e10-49", 0.5, false, 0.1, 58],
+		"vibraphone": ["mlp-fim-s2e10-49", 0.4, false, 0.1, 58],
 		"music box": ["pinkie-pie-14", 0.3, false, 0.25, 60.75],
 		"steel drum": ["mlp-s3-fim-5", 0.4, false, 0.25, 57.25],
 		"marimba": ["mlp-s1-fim-30", [[60, 0.5], [72, 0.4]], false, 0.1, 49],
 		"synth lead": ["mlp-s1e21-fim-3", [[48, 0.6], [53, 0.5], [64, 0.3], [84, 0.3]], true, 0.1, 57],
 		"synth pad": ["mlp-s1e13-fim-40", [[60, 0.6], [72, 0.5]], true, 0.1, null],
-		"timpani": ["peppa-pig-mi-114", 0.74, false, 0.1, 58],
+		"timpani": ["peppa-pig-mi-114", 0.5, false, 0.1, 60],
 		"whistle": ["peppa-pig-w-4", [[60, 0.6], [72, 0.5]], true, null, null],
 		"orchestra hit": ["mlp-s1-fim-109", 0.6, false, 0.25, 63],
-		"melodic tom": ["mlp-s5e9-471-1", 0.85, false, 0.25, 60],
+		"melodic tom": ["mlp-s5e9-471-1", 0.6, false, 0.1, 60],
 		"synth drum": ["mlp-s5e9-471-2", 0.6, false, 0.25, 60],
 		"church organ": ["mlp-s4e3-820-2", [[36, 1], [48, 0.9], [60, 0.8]], true, 0.1, 51],
 		"trumpet": ["mlp-s6e14-915", [[36, 0.8], [48, 0.7], [60, 0.6]], true, null, 55],
-		"trumbone": ["mlp-swarm-od-the-century-1290", [[36, 0.98], [48, 0.8], [60, 0.62], [72, 0.52]], true, null, 61],
+		"trumbone": ["mlp-swarm-od-the-century-1290", 0.5, true, null, 61],
 		"taiko drum": ["peppa-pig-drums-53", 0.8, false, 0.25, 62],
 		"reverse cymbal": ["mlp-fim-s8e26-850", 0.5, false, null, null],
-		"accordion": ["peppa-pig-mi-131", [[48, 0.5], [60, 0.4], [72, 0.3]], true, null, 59],
+		"accordion": ["peppa-pig-mi-131", 1, true, null, 59],
 		"gumshot": ["gumshot", 0.7, false, 1, null],
 		"agogo": ["mlp-fim-s9e15-937", 1, false, 0.25, 54.75],
-		"warm": ["mlp-fim-s5e9-750", 0.6, true, 0.25, null],
-		"bowed": ["mlp-fim-s5e9-750", 0.5, true, 0.25, null]
+		"warm": ["mlp-fim-s5e9-750", 0.5, true, 0.25, null],
+		"bowed": ["mlp-fim-s5e9-750", 0.4, true, 0.25, null]
 	}
 	var SOUNDBANKS_INFO = {
 		"pinkie-pie-60": {
@@ -273,27 +274,27 @@ var AnimTredInstruments = (function() {
 		"mlp-applebloom-89": {
 			title: "Friendship is Musical | Season 1 Episode 17-18",
 			source: "https://youtu.be/_CZQ6tfivVs?t=89",
-			file: "https://assets.scratch.mit.edu/internalapi/asset/39237faddf2e6c7d3d8f6d39ae30d8e6.wav/get/"
+			file: "https://assets.scratch.mit.edu/internalapi/asset/14de48050033fab752164b2e2db0f864.wav/get/"
 		},
 		"mlp-s4e3-820-1": {
 			title: "My Little Pony: Friendship is Magic - Season 4 Episode 3",
 			source: "https://youtu.be/oqaH8rTKu8M?t=820",
-			file: "https://assets.scratch.mit.edu/internalapi/asset/d07006b09cfbac92e3c5bef85ccd3d36.wav/get/"
+			file: "https://assets.scratch.mit.edu/internalapi/asset/fa7be115630bf14bf59015a57bbe7fc1.wav/get/"
 		},
 		"mlp-s1e22-176": {
 			title: "My Little Pony : Friendship is Magic Season 1 Episode 22",
 			source: "https://youtu.be/csuoJQH6Axs?t=176",
-			file: "https://assets.scratch.mit.edu/internalapi/asset/6404e29622b6443eae9ad68be58cd962.wav/get/"
+			file: "https://assets.scratch.mit.edu/internalapi/asset/cb6413a2d886fff9041ceb0a1e7d9a7b.wav/get/"
 		},
 		"mlp-pearbutter-193": {
 			title: "Bright Mac and Pear Butter's Love Story (The Perfect Pear) | MLP: FiM [HD]",
 			source: "https://youtu.be/Flv6_BrwPVU?t=193",
-			file: "https://assets.scratch.mit.edu/internalapi/asset/0328765961864d1ff2bc8aa2003489b0.wav/get/"
+			file: "https://assets.scratch.mit.edu/internalapi/asset/15cf0c4d311a564d56c4ee9204be729b.wav/get/"
 		},
 		"mlp-12": {
 			title: "Friendship is Musical VGM #1",
 			source: "https://youtu.be/qqB2J3-rMIc?t=12",
-			file: "https://assets.scratch.mit.edu/internalapi/asset/ace30ecd40b0ee7e7d77361e53e1f607.wav/get/"
+			file: "https://assets.scratch.mit.edu/internalapi/asset/35cd8b29cd1be42a338b0e4e61a1189d.wav/get/"
 		},
 		"daisy-143": {
 			title: "Friendship is Musical Season 2 First Half",
@@ -323,7 +324,7 @@ var AnimTredInstruments = (function() {
 		"peppa-pig-mi-69-1": {
 			title: "Peppa Pig - Musical Instruments (full episode)",
 			source: "https://youtu.be/n4gsHAH_q6s?t=69",
-			file: "https://assets.scratch.mit.edu/internalapi/asset/9f121cecc17a68610598587467cfc149.wav/get/"
+			file: "https://assets.scratch.mit.edu/internalapi/asset/12917e3ff88f66959dcf12873244f2c9.wav/get/"
 		},
 		"peppa-pig-mi-69-2": {
 			title: "Peppa Pig - Musical Instruments (full episode)",
@@ -334,6 +335,11 @@ var AnimTredInstruments = (function() {
 			title: "Peppa Pig - Musical Instruments (full episode)",
 			source: "https://youtu.be/n4gsHAH_q6s?t=69",
 			file: "https://assets.scratch.mit.edu/internalapi/asset/18e43c755854bd0d3cb86024ae0d33fe.wav/get/"
+		},
+		"peppa-pig-mi-69-cello": {
+			title: "Peppa Pig - Musical Instruments (full episode)",
+			source: "https://youtu.be/n4gsHAH_q6s?t=69",
+			file: "https://assets.scratch.mit.edu/internalapi/asset/bb8066637af51a8abc75ea47f9a545fc.wav/get/"
 		},
 		"mlp-24-1": {
 			title: "Friendship is Musical VGM #1",
@@ -448,7 +454,7 @@ var AnimTredInstruments = (function() {
 		"peppa-pig-mi-131": {
 			title: "Peppa Pig - Musical Instruments (full episode)",
 			source: "https://youtu.be/n4gsHAH_q6s?t=131",
-			file: "https://assets.scratch.mit.edu/internalapi/asset/f58883149c61023fb78e98e81aa5d023.wav/get/"
+			file: "https://assets.scratch.mit.edu/internalapi/asset/820436dabdeec858941ab4c223c27666.wav/get/"
 		},
 		"gumshot": {
 			title: "[Midi Player Gumshot]",
@@ -477,7 +483,7 @@ var AnimTredInstruments = (function() {
 		"electric guitar", "overdriven guitar", "overdriven guitar", "overdriven guitar",
 		"bass", "bass", "bass", "bass",
 		"bass", "bass", "bass", "bass",
-		"violin", "violin", "violin", "violin",
+		"violin", "violin", "cello", "cello",
 		"tremolo-string-1", "pizzicato", "bass", "timpani",
 		"tremolo-string-1", "tremolo-string-2", "tremolo-string-1", "tremolo-string-1",
 		"choir", "choir", "choir", "orchestra hit",
@@ -1059,9 +1065,9 @@ var AnimTredInstruments = (function() {
 			case 51: // General Purpose Controller #4 (LSB)
 				break;
 			case 64:
-				mse.controller.sustainPedalChannel[channel] = value;
+				mse.controller.sustainPedalChannel[channel] = value > 0;
 				if (isEnd) {
-					mse.controller.sustainPedalChannel[channel] = 0;
+					mse.controller.sustainPedalChannel[channel] = false;
 				}
 				if (mse.isEffect) {
 					for (let i = 0; i < mse.notesPlaying.length; i++) {
@@ -1070,7 +1076,7 @@ var AnimTredInstruments = (function() {
 							continue;
 						}
 						if (channel == note.channel) {
-							if (mse.controller.sustainPedalChannel[channel] > 0) {
+							if (mse.controller.sustainPedalChannel[channel]) {
 								note.setDurationInf = true;
 							} else {
 								note.setDurationInf = false;
@@ -1116,14 +1122,14 @@ var AnimTredInstruments = (function() {
 			case 96: // Data entry +1
 			case 97: // Data entry -1
 				break;
+			case 98: // Non-Registered Parameter Number (LSB)
+			case 99: // Non-Registered Parameter Number (MSB)
+				break;
 			case 100: // Registered Parameter Number LSB
 				mse.controller.registeredParameterLSBchannel[channel] = value;
 				break;
 			case 101: // Registered Parameter Number MSB
 				mse.controller.registeredParameterMSBchannel[channel] = value;
-				break;
-			case 98: // Non-Registered Parameter Number (LSB)
-			case 99: // Non-Registered Parameter Number (MSB)
 				break;
 			case 120: // All Sound Off
 			case 126: // Poly mode on/off (+ all notes off)
@@ -1219,16 +1225,17 @@ var AnimTredInstruments = (function() {
 		this._soundbank = {};
 		this._frameStart = Date.now();
 		this._interval = setInterval(this._step.bind(this), 5);
-		this.panGainChannel = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+		this._panGainChannel = new Array(16);
+		this.outputGainChannel = new Array(16);
 		for (var i = 0; i < 16; i++) {
-			this.panGainChannel[i] = this._createPan(this.node);
+			this._panGainChannel[i] = this._createPan(this.node);
+			this.outputGainChannel[i] = this._panGainChannel[i].inputNode;
 		}
 		this.resetEffect();
 	}
 	Player.prototype.resetEffect = function() {
 		this.resetController();
 		this.programChannel = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
 		this.pitchBendChannel = [8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192];
 	}
 	Player.prototype.resetController = function() {
@@ -1236,7 +1243,7 @@ var AnimTredInstruments = (function() {
 		this.controller.modulationChannel = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 		this.controller.volumeChannel = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
 		this.controller.expressionChannel = [127, 127, 127, 127, 127, 127, 127, 127, 127, 127, 127, 127, 127, 127, 127, 127];
-		this.controller.panChannel = [63, 63, 63, 63, 63, 63, 63, 63, 63, 63, 63, 63, 63, 63, 63, 63];
+		this.controller.panChannel = [64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64];
 		this.controller.dataEntryMSB = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
 		this.controller.dataEntryLSB = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
 		this.controller.registeredParameterMSBchannel = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -1444,6 +1451,18 @@ var AnimTredInstruments = (function() {
 		}
 		return j || 1;
 	}
+	Player.prototype._createPan = function(input) {
+		var inputNode = this.audioContext.createGain();
+		var leftGain = this.audioContext.createGain();
+		var rightGain = this.audioContext.createGain();
+		var channelMerger = this.audioContext.createChannelMerger(2);
+		inputNode.connect(leftGain);
+		inputNode.connect(rightGain);
+		leftGain.connect(channelMerger, 0, 0);
+		rightGain.connect(channelMerger, 0, 1);
+		channelMerger.connect(input);
+		return {inputNode, leftGain, rightGain};
+	}
 	Player.prototype.playNote = function(n) {
 		if (n.type == 1) {
 			var inst = MIDI_INSTRUMENT[n.instrument - 1];
@@ -1498,18 +1517,6 @@ var AnimTredInstruments = (function() {
 			return {source, node};
 		}
 	}
-	Player.prototype._createPan = function(input) {
-		var inputNode = this.audioContext.createGain();
-		var leftGain = this.audioContext.createGain();
-		var rightGain = this.audioContext.createGain();
-		var channelMerger = this.audioContext.createChannelMerger(2);
-		inputNode.connect(leftGain);
-		inputNode.connect(rightGain);
-		leftGain.connect(channelMerger, 0, 0);
-		rightGain.connect(channelMerger, 0, 1);
-		channelMerger.connect(input);
-		return {inputNode, leftGain, rightGain}
-	}
 	Player.prototype._playNotes = function(n, i) {
 		var a = i;
 		if (a < 0) {
@@ -1529,7 +1536,7 @@ var AnimTredInstruments = (function() {
 			node.gain.value = 0;
 			source.buffer = buffer.buffer;
 			source.connect(node);
-			node.connect(this.panGainChannel[n[3]].inputNode);
+			node.connect(this.outputGainChannel[n[3]]);
 			const isStart = (n[5] - n[6]) > 0;
 			const volume = (n[2] / 127);
 			var te = {
@@ -1544,6 +1551,7 @@ var AnimTredInstruments = (function() {
 				nodeOff: n[5],
 				volume: volume,
 				releaseVolume: (span[1] || 1),
+				releaseGainVolume: 1,
 				pitch: 60,
 				source: source,
 				track: n[4],
@@ -1579,14 +1587,11 @@ var AnimTredInstruments = (function() {
 			const volume = (n[2] / 127);
 			const isStart = (n[5] - n[6]) > 0;
 			gain.value = 0;
-			const releaseGain = this.audioContext.createGain();
-			releaseGain.gain.value = 1;
-			node.connect(releaseGain);
+			node.connect(this.outputGainChannel[n[3]]);
 			var releaseDuration = span[3];
 			if (releaseDuration === null || !isStart) {
 				releaseDuration = 0.01;
 			}
-			releaseGain.connect(this.panGainChannel[n[3]].inputNode);
 			var te = {
 				_pitch: n[1],
 				_volume: n[2],
@@ -1596,10 +1601,10 @@ var AnimTredInstruments = (function() {
 				source: source,
 				note: node,
 				setDurationInf: false,
+				releaseGainVolume: 1,
 				start: isStart,
 				release: {
 					duration: releaseDuration * 1000,
-					releaseGain: releaseGain,
 					ended: false,
 				},
 				volume: volume,
@@ -1625,7 +1630,7 @@ var AnimTredInstruments = (function() {
 		return this.controller.sustainPedalChannel[channel];
 	}
 	Player.prototype._getPanChannel = function(channel) {
-		return ((this.controller.panChannel[channel] - 64) / 64) * 100;
+		return ((this.controller.panChannel[channel] - 64) / 100);
 	}
 	Player.prototype._getVolumeChannel = function(channel) {
 		return (this.controller.volumeChannel[channel] / 100) * (this.controller.expressionChannel[channel] / 127);
@@ -1638,7 +1643,7 @@ var AnimTredInstruments = (function() {
 	}
 	Player.prototype._startNote = function(n) {
 		if (this.isEffect && n.track) {
-			if (this._getSustainPedalChannel(n.channel) > 0) {
+			if (this._getSustainPedalChannel(n.channel)) {
 				n.setDurationInf = true;
 			}
 		}
@@ -1648,10 +1653,10 @@ var AnimTredInstruments = (function() {
 			if (this.isEffect && n.track) {
 				n.source.playbackRate.value = Math.pow(2, (((n.pitch + this._getPitchBend(n.channel)) - 60) / 12));
 				const volumeEffect = (n.volume * this._getVolumeChannel(n.channel));
-				n.note.gain.value = (((Math.pow(5, volumeEffect) - 1) / 4) * n.releaseVolume);
+				n.note.gain.value = (((Math.pow(6, volumeEffect) - 1) / 5) * n.releaseVolume * n.releaseGainVolume);
 			} else {
 				n.source.playbackRate.value = Math.pow(2, ((n.pitch - 60) / 12));
-				n.note.gain.value = (n.volume * n.releaseVolume);
+				n.note.gain.value = (n.volume * n.releaseVolume * n.releaseGainVolume);
 				n.duration = n.dur;
 			}
 		}
@@ -1663,13 +1668,9 @@ var AnimTredInstruments = (function() {
 			this.setStartTime(this.duration);
 			for (var i = 0; i < this.notesPlaying.length; i++) {
 				var dn = this.notesPlaying[i];
-				if (dn) {
-					dn.ended = true;
-				}
+				if (dn) dn.ended = true;
 			}
-			if (this.onended) {
-				this.onended();
-			}
+			if (this.onended) this.onended();
 			this.isPaused = true;
 		}
 		this._currentTimeLast = this.currentTime;
@@ -1687,12 +1688,15 @@ var AnimTredInstruments = (function() {
 	}
 	Player.prototype._stepUpdateEffect = function() {
 		for (let i = 0; i < 16; i++) {
-			var pan = this.panGainChannel[i];
-			const p = (this._getPanChannel(i) + 100) / 200;
-			const leftVal = Math.cos(p * Math.PI / 2);
-			const rightVal = Math.sin(p * Math.PI / 2);
-			pan.leftGain.gain.value = leftVal;
-			pan.rightGain.gain.value = rightVal;
+			var pan = this._panGainChannel[i];
+			const p = (this.isEffect ? this._getPanChannel(i) : 0);
+			if (p > 0) {
+				pan.leftGain.gain.value = 1 - p;
+				pan.rightGain.gain.value = 1;
+			} else {
+				pan.rightGain.gain.value = p + 1;
+				pan.leftGain.gain.value = 1;
+			}
 		}
 	}
 	Player.prototype._stepUpdateTrack = function() {
@@ -1710,7 +1714,7 @@ var AnimTredInstruments = (function() {
 					this._stepUpdateTimeTrack(_currentTimeLast, 1);
 					break;
 				}
-				_currentTimeLast += 100000
+				_currentTimeLast += 100000;
 			}
 		} else {
 			if (_currentTime < _currentTimeLast) {
@@ -1733,75 +1737,41 @@ var AnimTredInstruments = (function() {
 			for (var i = 0; i < this.trackQueue.length; i++) {
 				var track = this.trackQueue[i];
 				var _tempoQueue = track.tempoQueue;
-				if (this.formatType == 2) {
-					_currentPulse = (track.tempoTick + ((g - track.tempoTime) / track.tempo));
-					if (h > 0) {
-						while (track.tempoTracker < _tempoQueue.tick.length && _currentPulse >= _tempoQueue.tick[track.tempoTracker]) {
-							track.tempoTime += (_tempoQueue.tick[track.tempoTracker] - track.tempoTick) * track.tempo;
-							track.tempoTick = _tempoQueue.tick[track.tempoTracker];
-							track.tempo = _tempoQueue.setting[track.tempoTracker] / this.timeDivision;
-							_currentPulse = (track.tempoTick + ((g - track.tempoTime) / track.tempo));
-							track.tempoTracker++;
-						}
-					} else {
-						if (h < 0) {
-							track.tempoTracker--;
-							while (track.tempoTracker >= 0 && _currentPulse < _tempoQueue.tick[track.tempoTracker]) {
-								track.tempoTracker--;
-								if (track.tempoTracker >= 0) {
-									track.tempo = _tempoQueue.setting[track.tempoTracker] / this.timeDivision;
-									track.tempoTime += (_tempoQueue.tick[track.tempoTracker] - track.tempoTick) * track.tempo;
-									track.tempoTick = _tempoQueue.tick[track.tempoTracker];
-								} else {
-									track.tempo = 500000 / this.timeDivision;
-									track.tempoTime = 0;
-									track.tempoTick = 0;
-								}
-								_currentPulse = (track.tempoTick + ((g - track.tempoTime) / track.tempo));
-							}
-							track.tempoTracker++;
-						}
+				_currentPulse = (this._tempoTick + ((g - this._tempoTime) / this._tempo));
+				if (h > 0) {
+					while (track.tempoTracker < _tempoQueue.tick.length && _currentPulse >= _tempoQueue.tick[track.tempoTracker]) {
+						this._tempoTime += (_tempoQueue.tick[track.tempoTracker] - this._tempoTick) * this._tempo;
+						this._tempoTick = _tempoQueue.tick[track.tempoTracker];
+						this._tempo = _tempoQueue.setting[track.tempoTracker] / this.timeDivision;
+						_currentPulse = (this._tempoTick + ((g - this._tempoTime) / this._tempo));
+						track.tempoTracker++;
 					}
-					track.currentPulse = _currentPulse;
 				} else {
-					_currentPulse = (this._tempoTick + ((g - this._tempoTime) / this._tempo));
-					if (h > 0) {
-						while (track.tempoTracker < _tempoQueue.tick.length && _currentPulse >= _tempoQueue.tick[track.tempoTracker]) {
-							this._tempoTime += (_tempoQueue.tick[track.tempoTracker] - this._tempoTick) * this._tempo;
-							this._tempoTick = _tempoQueue.tick[track.tempoTracker];
-							this._tempo = _tempoQueue.setting[track.tempoTracker] / this.timeDivision;
-							_currentPulse = (this._tempoTick + ((g - this._tempoTime) / this._tempo));
-							track.tempoTracker++;
-						}
-					} else {
-						if (h < 0) {
+					if (h < 0) {
+						track.tempoTracker--;
+						while (track.tempoTracker >= 0 && _currentPulse < _tempoQueue.tick[track.tempoTracker]) {
 							track.tempoTracker--;
-							while (track.tempoTracker >= 0 && _currentPulse < _tempoQueue.tick[track.tempoTracker]) {
-								track.tempoTracker--;
-								if (track.tempoTracker >= 0) {
-									this._tempo = _tempoQueue.setting[track.tempoTracker] / this.timeDivision;
-									this._tempoTime += (_tempoQueue.tick[track.tempoTracker] - this._tempoTick) * this._tempo;
-									this._tempoTick = _tempoQueue.tick[track.tempoTracker];
-								} else {
-									this._tempo = 500000 / this.timeDivision;
-									this._tempoTime = 0;
-									this._tempoTick = 0;
-								}
-								_currentPulse = (this._tempoTick + ((g - this._tempoTime) / this._tempo))
+							if (track.tempoTracker >= 0) {
+								this._tempo = _tempoQueue.setting[track.tempoTracker] / this.timeDivision;
+								this._tempoTime += (_tempoQueue.tick[track.tempoTracker] - this._tempoTick) * this._tempo;
+								this._tempoTick = _tempoQueue.tick[track.tempoTracker];
+							} else {
+								this._tempo = 500000 / this.timeDivision;
+								this._tempoTime = 0;
+								this._tempoTick = 0;
 							}
-							track.tempoTracker++;
+							_currentPulse = (this._tempoTick + ((g - this._tempoTime) / this._tempo))
 						}
+						track.tempoTracker++;
 					}
 				}
 			}
-			if (this.formatType !== 2) {
-				this._currentPulse = (this._tempoTick + ((g - this._tempoTime) / this._tempo));
-				for (var i = 0; i < this.trackQueue.length; i++) {
-					this.trackQueue[i].currentPulse = this._currentPulse;
-					this.trackQueue[i].tempoTick = this._tempoTick;
-					this.trackQueue[i].tempoTime = this._tempoTime;
-					this.trackQueue[i].tempo = this._tempo;
-				}
+			this._currentPulse = (this._tempoTick + ((g - this._tempoTime) / this._tempo));
+			for (var i = 0; i < this.trackQueue.length; i++) {
+				this.trackQueue[i].currentPulse = this._currentPulse;
+				this.trackQueue[i].tempoTick = this._tempoTick;
+				this.trackQueue[i].tempoTime = this._tempoTime;
+				this.trackQueue[i].tempo = this._tempo;
 			}
 			for (var i = 0; i < this.trackQueue.length; i++) {
 				this.trackQueue[i].update();
@@ -1812,10 +1782,12 @@ var AnimTredInstruments = (function() {
 		note.source.removeEventListener("ended", note.endedFunction);
 		note.source.disconnect();
 		note.note.disconnect();
+		note.source = null;
+		note.note = null;
 		note.ended = true;
 	}
 	Player.prototype._stepPlayingNote = function() {
-		for (var i = 0; i < this.trackQueue.length; i++) {
+		for (let i = 0; i < this.trackQueue.length; i++) {
 			var track = this.trackQueue[i];
 			var _noteQueue = track.noteQueue;
 			var notes = track.getNote(this.muteMusicr);
@@ -1851,13 +1823,12 @@ var AnimTredInstruments = (function() {
 				if (!this.node.gain.value) continue;
 				var g = [program, pitch, volume, channel, track.trackNumber, tickOff, tickOn];
 				var f = -1;
-				var _hid = ((g[1] + (g[0] * 128)) + (g[3] * 16384));
+				var _hid = ((pitch + (program * 128)) + (channel * 16384));
 				var _hn = this.notesPlayingIDs[_hid];
 				if (_hn != null) {
 					var h = this.notesPlaying[_hn];
 					if (h) {
 						f = _hn;
-						this._noteStop(h);
 						var _release = h.release;
 						if (!h.ended && _release && !_release.ended && !h.setDurationInf) {
 							var j = Math.min(h.nodeOff, g[5]);
@@ -1865,6 +1836,7 @@ var AnimTredInstruments = (function() {
 								g[5] = j;
 							}
 						}
+						this._noteStop(h);
 						this.notesPlayingIDs[_hid] = null;
 						this.notesPlaying[f] = null;
 					}
@@ -1874,7 +1846,7 @@ var AnimTredInstruments = (function() {
 		}
 	}
 	Player.prototype._stepNotesPlaying = function() {
-		for (let i = this.notesPlaying.length; i--; ) {
+		for (let i = 0; i < this.notesPlaying.length; i++) {
 			var note = this.notesPlaying[i];
 			if (!note) continue;
 			if (!note.ended) {
@@ -1889,8 +1861,8 @@ var AnimTredInstruments = (function() {
 						if (!("startTime" in _release)) {
 							_release.startTime = Date.now();
 						}
-						if (_release.duration && _release.releaseGain) {
-							_release.releaseGain.gain.value = Math.max(0, (1 - ((Date.now() - _release.startTime) / _release.duration)));
+						if (_release.duration) {
+							note.releaseGainVolume = Math.max(0, (1 - ((Date.now() - _release.startTime) / _release.duration)));
 							if ((Date.now() - _release.startTime) >= _release.duration) {
 								note.ended = true;
 							}
@@ -1934,56 +1906,39 @@ var AnimTredInstruments = (function() {
 	}
 	Player.prototype.getDuration = function() {
 		var duration = 0;
-		if (this.formatType == 2) {
-			for (var i = 0; i < this.trackQueue.length; i++) {
-				var _tempoQueue = this.trackQueue[i].tempoQueue;
-				var tempoTick = 0;
-				var tempo = 500000 / this.timeDivision;
-				var time = 0;
-				for (var _i = 0; _i < _tempoQueue.tick.length; _i++) {
-					time += (_tempoQueue.tick[_i] - tempoTick) * tempo;
-					tempoTick = _tempoQueue.tick[_i];
-				}
-				time += (this.trackQueue[i].pulseCounterLength - tempoTick) * tempo;
-				if (time > duration) {
-					duration = time;
-				}
+		var _pulseCounterLength = 0;
+		var _tracks = [];
+		for (var i = 0; i < this.trackQueue.length; i++) {
+			var len = this.trackQueue[i].pulseCounterLength;
+			if (len > _pulseCounterLength) {
+				_pulseCounterLength = len;
 			}
-		} else {
-			var _pulseCounterLength = 0;
-			var _tracks = [];
-			for (var i = 0; i < this.trackQueue.length; i++) {
-				var len = this.trackQueue[i].pulseCounterLength;
-				if (len > _pulseCounterLength) {
-					_pulseCounterLength = len;
-				}
-				_tracks.push({
-					tempoIdx: 0
-				})
-			}
-			var tempoTick = 0;
-			var tempo = 500000 / this.timeDivision;
-			var time = 0;
-			var tempoLen = this.getTempoLength();
-			var tempoIdx = 0;
-			while (tempoIdx < tempoLen) {
-				var _currentPulse = 0;
-				for (var i = 0; i < _tracks.length; i++) {
-					var _tempoQueue = this.trackQueue[i].tempoQueue;
-					_currentPulse = (tempoTick + ((time - duration) / tempo));
-					while (_tracks[i].tempoIdx < _tempoQueue.tick.length && _currentPulse >= _tempoQueue.tick[_tracks[i].tempoIdx]) {
-						duration += (_tempoQueue.tick[_tracks[i].tempoIdx] - tempoTick) * tempo;
-						tempoTick = _tempoQueue.tick[_tracks[i].tempoIdx];
-						tempo = _tempoQueue.setting[_tracks[i].tempoIdx] / this.timeDivision;
-						_currentPulse = (tempoTick + ((time - duration) / tempo));
-						_tracks[i].tempoIdx++;
-						tempoIdx++;
-					}
-				}
-				time += 100000;
-			}
-			duration += (_pulseCounterLength - tempoTick) * tempo;
+			_tracks.push({
+				tempoIdx: 0
+			})
 		}
+		var tempoTick = 0;
+		var tempo = 500000 / this.timeDivision;
+		var time = 0;
+		var tempoLen = this.getTempoLength();
+		var tempoIdx = 0;
+		while (tempoIdx < tempoLen) {
+			var _currentPulse = 0;
+			for (var i = 0; i < _tracks.length; i++) {
+				var _tempoQueue = this.trackQueue[i].tempoQueue;
+				_currentPulse = (tempoTick + ((time - duration) / tempo));
+				while (_tracks[i].tempoIdx < _tempoQueue.tick.length && _currentPulse >= _tempoQueue.tick[_tracks[i].tempoIdx]) {
+					duration += (_tempoQueue.tick[_tracks[i].tempoIdx] - tempoTick) * tempo;
+					tempoTick = _tempoQueue.tick[_tracks[i].tempoIdx];
+					tempo = _tempoQueue.setting[_tracks[i].tempoIdx] / this.timeDivision;
+					_currentPulse = (tempoTick + ((time - duration) / tempo));
+					_tracks[i].tempoIdx++;
+					tempoIdx++;
+				}
+			}
+			time += 100000;
+		}
+		duration += (_pulseCounterLength - tempoTick) * tempo;
 		return Math.floor(duration / 1000) / 1000;
 	}
 	Player.prototype._init = function(data) {
@@ -2014,6 +1969,6 @@ var AnimTredInstruments = (function() {
 		INSTRUMENT_INFO,
 		SOUNDBANKS_INFO,
 		formats: ["mid", "rmi", "midi"],
-		version: "5.1.10"
+		version: "5.1.20"
 	}
 }());
